@@ -1,3 +1,7 @@
+# Day 03 - Building an ERC721 NFT
+
+Today I built and deployed a custom ERC721-style NFT smart contract as part of my Base Builder journey.
+
 ## Deployment
 
 **Network:** Base Sepolia Testnet
@@ -6,7 +10,7 @@
 `0xB4fdcA6fFc2b495872ACdc5759dc81476aB01538`
 
 **Deployer:**
-`0x12A8a8925926939B3C161e8990E74f4D365093`
+`0x12a8a89295926939b3cB161e8990E74f4D365093`
 
 ---
 
@@ -21,27 +25,37 @@ Successfully minted:
 
 ### Ownership
 
-`ownerOf(1)`
+Tested ownership tracking:
 
-Owner:
+**ownerOf(1):**
+`0x12a8a89295926939b3cB161e8990E74f4D365093`
 
-`0x12A8a8925926939B3C161e8990E74f4D365093`
-
-`ownerOf(2)`
-
-Owner:
-
-`0x9A714f53F395997F0DB234f52da66FbbAC06714`
-
-### Balance Check
-
-`balanceOf(deployer)` → `1`
-
-`balanceOf(recipient)` → `1`
+**ownerOf(2):**
+`0x9A714f53aF39599F70DB234f52da66fBbaC06714`
 
 ### Token URI
 
-`tokenURI(1)`
+Successfully verified metadata URIs:
 
-```text
-https://example.com/metadata/1
+- Token ID #1  
+  `https://example.com/metadata/1`
+
+- Token ID #2  
+  `https://example.com/metadata/2`
+
+## Features
+
+- ERC721-style NFT functionality
+- Unique token ownership tracking
+- Token balances
+- Mint new NFTs
+- Maximum supply limit
+- Minting pause control
+- Token URI storage
+
+## Tools Used
+
+- Solidity
+- Remix IDE
+- MetaMask
+- Base Sepolia Testnet

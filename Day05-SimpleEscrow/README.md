@@ -1,35 +1,37 @@
-# 🔐 Day 05 – Simple Escrow
+# 🔐 Day 05 - Simple Escrow
 
 ## 📌 Project Overview
 
 This project is part of my Base Builder 2026 learning journey.
 
-On Day 05, I built a simple escrow smart contract that allows ETH to be securely held between a buyer and a seller.
+On Day 05, I built a simple escrow smart contract called `SimpleEscrow`.
 
-The buyer deposits ETH into the contract. After the transaction is completed, the buyer can release the payment to the seller. If the transaction is cancelled, the seller can refund the ETH back to the buyer.
-
----
+The contract allows a buyer to deposit ETH into the escrow. Once the conditions are met, the buyer can release the funds to the seller. If necessary, the buyer can also request a refund.
 
 ## 🎯 Learning Goals
 
-- Understand escrow smart contract logic
+- Understand the escrow smart contract pattern
 - Use `payable` functions
-- Handle ETH deposits
+- Handle ETH deposits using `msg.value`
+- Use access control with `require`
+- Track contract state with boolean variables
 - Transfer ETH between addresses
-- Use constructor parameters
-- Apply access control with `msg.sender`
-- Manage contract states
-- Prevent double release or refund
 - Emit events for contract activity
-- Deploy and interact with a smart contract on Base Sepolia
+- Deploy and interact with a smart contract on Base Sepolia Testnet
 
----
+## ✨ Features
 
-## ⚙️ How It Works
+- Buyer and seller addresses are defined when the contract is deployed
+- Only the buyer can deposit ETH
+- ETH can only be deposited once
+- Only the buyer can release the funds
+- Funds are transferred to the seller after release
+- Buyer can request a refund before funds are released
+- Events are emitted for deposits, releases, and refunds
 
-### 1. Deploy
+## 📄 Smart Contract
 
-The buyer deploys the contract and provides the seller's address.
+Main contract:
 
 ```text
-constructor(address _seller)
+SimpleEscrow.sol
